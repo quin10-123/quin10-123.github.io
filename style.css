@@ -1,0 +1,89 @@
+/* Basic layout */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+  color: #222;
+  background: #fafaf7;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+a {
+  color: #1a5fb4;
+}
+
+/* Header */
+header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header h1 a {
+  color: #222;
+  text-decoration: none;
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  color: #666;
+}
+
+/* Post list on the home page */
+.post-preview {
+  margin-bottom: 2.5rem;
+}
+
+.post-preview h2 {
+  margin: 0.2rem 0 0.5rem;
+}
+
+.post-preview h2 a {
+  color: #222;
+  text-decoration: none;
+}
+
+.post-preview h2 a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.read-more {
+  font-size: 0.95rem;
+}
+
+/* A single post page */
+.post h2 {
+  font-size: 1.9rem;
+  margin: 0.2rem 0 1rem;
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #ddd;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
