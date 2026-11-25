@@ -3,30 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Blog</title>
+  <title>YOUR NAME – Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1><a href="index.html">My Blog</a></h1>
-    <p class="tagline">Thoughts, notes and things I've learned.</p>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">YOUR NAME</a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="blog/index.html">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- INTRO -->
+  <header class="hero container">
+    <!-- To use a real photo, replace the div below with:
+         <img class="avatar" src="images/me.jpg" alt="Photo of YOUR NAME"> -->
+    <div class="avatar">YN</div>
+    <div>
+      <h1>Hi, I'm YOUR NAME.</h1>
+      <p class="lead">I'm a STUDENT / DEVELOPER / DESIGNER who enjoys building things that are useful and fun. Here you'll find some of my projects, what I've studied, and what I do in my free time.</p>
+      <div class="links">
+        <a class="button" href="mailto:YOU@EXAMPLE.COM">Email me</a>
+        <a class="button outline" href="https://github.com/YOURUSERNAME">GitHub</a>
+        <a class="button outline" href="https://linkedin.com/in/YOURNAME">LinkedIn</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <!-- Add a new post: copy one <article> block, put it at the top,
-         and change the date, title, link and summary. -->
 
-    <article class="post-preview">
-      <p class="date">25 November 2026</p>
-      <h2><a href="posts/first-post.html">My first blog post</a></h2>
-      <p>Welcome to my new blog! In this first post I explain why I started writing and what you can expect here.</p>
-      <a class="read-more" href="posts/first-post.html">Read more →</a>
-    </article>
+    <!-- PROJECTS -->
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div class="grid">
+
+        <article class="card">
+          <!-- Replace with: <img class="thumb" src="images/project1.png" alt="Screenshot of Project One"> -->
+          <div class="thumb"></div>
+          <div class="card-body">
+            <h3>Project One</h3>
+            <p>A short description of what this project does and why you made it.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a href="https://github.com/YOURUSERNAME/project-one">View project →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <h3>Project Two</h3>
+            <p>What problem did it solve? What did you learn while building it?</p>
+            <div class="tags"><span>Python</span><span>Data</span></div>
+            <a href="https://github.com/YOURUSERNAME/project-two">View project →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb"></div>
+          <div class="card-body">
+            <h3>Project Three</h3>
+            <p>One or two sentences are enough. Link to the details for more.</p>
+            <div class="tags"><span>Design</span><span>Figma</span></div>
+            <a href="https://github.com/YOURUSERNAME/project-three">View project →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="container">
+      <h2>Education</h2>
+      <ul class="timeline">
+        <li>
+          <span class="years">2022 – 2025</span>
+          <div>
+            <h3>Bachelor in YOUR SUBJECT</h3>
+            <p class="muted">NAME OF UNIVERSITY, CITY</p>
+            <p>Thesis or key courses: e.g. "Machine Learning", "Web Development".</p>
+          </div>
+        </li>
+        <li>
+          <span class="years">2016 – 2022</span>
+          <div>
+            <h3>Secondary school</h3>
+            <p class="muted">NAME OF SCHOOL, CITY</p>
+            <p>Profile or specialisation, if relevant.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="container">
+      <h2>Hobbies</h2>
+      <div class="hobbies">
+        <div class="hobby"><span class="emoji">📷</span><h3>Photography</h3><p>Mostly street and travel photos.</p></div>
+        <div class="hobby"><span class="emoji">🚴</span><h3>Cycling</h3><p>Weekend rides, the longer the better.</p></div>
+        <div class="hobby"><span class="emoji">🍳</span><h3>Cooking</h3><p>Always trying a new recipe.</p></div>
+        <div class="hobby"><span class="emoji">🎮</span><h3>Gaming</h3><p>Strategy and puzzle games.</p></div>
+      </div>
+    </section>
+
+    <!-- LATEST BLOG POSTS -->
+    <section id="blog" class="container">
+      <h2>Latest from the blog</h2>
+      <!-- Keep this list in sync with blog/index.html: show your 2–3 newest posts here. -->
+      <ul class="post-list">
+        <li>
+          <span class="date">25 Nov 2026</span>
+          <a href="blog/first-post.html">My first blog post</a>
+        </li>
+      </ul>
+      <a href="blog/index.html">View all posts →</a>
+    </section>
 
   </main>
 
-  <footer>
-    <p>© 2026 Quinten Bongers</p>
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <a href="mailto:YOU@EXAMPLE.COM">Email</a> ·
+        <a href="https://github.com/YOURUSERNAME">GitHub</a> ·
+        <a href="https://linkedin.com/in/YOURNAME">LinkedIn</a>
+      </p>
+      <p class="muted">© 2026 YOUR NAME</p>
+    </div>
   </footer>
+
 </body>
 </html>
