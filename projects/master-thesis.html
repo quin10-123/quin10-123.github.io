@@ -199,7 +199,22 @@
 
     <!-- ===== 5. CONCLUSION ===== -->
     <h2>Conclusion</h2>
-    <p>Summarise the result in a few sentences: what the testbench can do now, how it compares to existing methods, and what could be improved in future work.</p>
+    <p>The goal of this thesis was to measure the power loss caused by the road surface accurately and repeatably on a testbench. To do this, I built a testbench from three parts:</p>
+    <ul>
+      <li>a <strong>treadmill with a real road surface</strong>, made from 3D-scanned and 3D-printed Dutch road bricks;</li>
+      <li>a <strong>stabilization mechanism</strong> of two double inverted pendulums, which keeps the bike upright while still letting it move naturally;</li>
+      <li>a <strong>measurement setup</strong> with two load cells, where a double flexure filters out the force of the stabilization mechanism.</li>
+    </ul>
+    <p>Because the bike stands still, there are no aerodynamic losses, and because the belt loops around, every test runs over exactly the same road surface.</p>
+
+    <div class="facts">
+      <div><span>Measurement accuracy</span>± 0.41 N</div>
+      <div><span>At 30 km/h, this equals</span>± 3.4 W</div>
+      <div><span>Compared to the total loss</span>3.4 W of 234 W (about 1.5%)</div>
+    </div>
+
+    <p>The measurement setup is accurate to <strong>0.41 N</strong>. At 30 km/h that is just 3.4 W, compared to a total power loss of 234 W, so the testbench is accurate enough to clearly measure the differences between tyre pressures and speeds. The error bars in the results (95% confidence interval) are small compared to the losses themselves, which shows that the measurements are also repeatable.</p>
+    <p>The measurements show that vibrational losses are far from negligible: on this road surface they make up about two thirds of the total power loss, which reaches up to 234 W at 30 km/h. Higher tyre pressures (5.0–5.5 bar) gave the lowest losses, especially at higher speeds.</p>
 
     <h2>What I learned</h2>
     <ul>
