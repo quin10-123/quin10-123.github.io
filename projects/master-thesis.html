@@ -33,50 +33,103 @@
       <div><span>Thesis</span><a href="#">Read the full thesis</a></div>
     </div>
 
-    <!-- HERO PHOTO: replace the div with
-         <img src="../images/thesis/treadmill_complete_assembly.png" alt="The finished testbench"> -->
     <figure class="figure">
-      <img src="../images/thesis/treadmill_complete_assembly.png" alt="The finished testbench">
-      <figcaption>The finished testbench in the lab.</figcaption>
+      <img src="../images/thesis/treadmill_complete_assembly_photo.jpeg" alt="A road bike on a treadmill covered with 3D-printed bricks, held by an aluminium stabilization frame">
+      <figcaption>The finished testbench: a bike on a treadmill covered with a real road surface.</figcaption>
     </figure>
 
     <!-- ===== 1. THE PROBLEM ===== -->
     <h2>The problem</h2>
-    <p>When you ride a bicycle, part of your power is lost to aerodynamic losses, drivetrain losses, and rolling resistance. A lot of research has been done on aerodynamics losses, but not so much on rolling resistance. A large share is lost where the tyre meets the road. A rough surface such as cobblestones or coarse asphalt makes the tyre, wheel, bike and rider vibrate and that energy is lost.</p>
-    <p>These losses are hard to measure. On the road, wind, temperature and the rider's own movements add a lot of noise. On a standard roller in the lab the surface is perfectly smooth, so the effect of the road is not there at all.</p>
+    <p>When you ride a bicycle, your power is lost to aerodynamic drag, drivetrain losses and rolling resistance. Aerodynamics and rolling resistance have both been studied extensively. One part of rolling resistance, however, has received very little attention: the <strong>vibrational losses</strong>. On a rough surface such as Dutch brick roads, cobblestones or coarse asphalt, the tyre, wheel, bike and rider start to vibrate. The energy that goes into those vibrations is lost.</p>
+    <p>These losses are hard to measure. On the road, wind, temperature and the rider's own movements add a lot of noise, and it is almost impossible to ride exactly the same line twice. Indoor test setups do exist, but they lack the rough texture of a real road: on a standard roller the surface is perfectly smooth, so the effect of the road is not there at all.</p>
 
     <div class="callout">
-      <p><strong>Research question:</strong> How can the power loss caused by the road surface be measured accurately and repeatably in a controlled setting?</p>
+      <p><strong>Research question:</strong> How can the power loss caused by the road surface be measured accurately and repeatably on a testbench?</p>
     </div>
 
     <!-- ===== 2. THE APPROACH ===== -->
     <h2>My approach</h2>
-    <p>Describe the main idea of your solution here. For example: what the testbench does, how a road surface is recreated, and what is being measured (e.g. drum speed, forces, torque, vibrations).</p>
+    <p>Previous MSc students have tried to measure these losses in two ways:</p>
+    <ul>
+      <li><strong>A closed trailer.</strong> The first attempt put the cyclist inside a closed trailer. With no wind inside the trailer, there is no aerodynamic drag, so only the rolling losses remain. In practice, however, the measurements were not accurate enough to show the vibrational losses.</li>
+      <li><strong>A mathematical road surface.</strong> The second attempt modelled a classic brick road mathematically as a series of bumps, and calculated the power loss from the drop in speed after riding over them. The problem: bumps make the bike and rider move in a completely different way than a real brick surface does, so the losses measured were not the losses of a real road.</li>
+    </ul>
+    <p>I took a different route and brought a real road surface into the lab:</p>
+    <ol>
+      <li>Start with a <strong>treadmill</strong> (a Technogym Skillrun) and cover it with a custom-made road surface.</li>
+      <li>Build a <strong>stabilization mechanism</strong> that keeps the bike upright on the treadmill.</li>
+      <li>Build a <strong>measurement setup</strong> that measures the resistive force on the bike.</li>
+    </ol>
+    <p>This solves the two biggest problems at once: because the bike stands still, there are <strong>no aerodynamic losses</strong>, and because the belt loops around, the bike <strong>always rides over the same real road surface</strong>.</p>
 
-    <!-- CONCEPT IMAGE: e.g. a CAD render or schematic -->
     <figure class="figure">
-      <div class="photo">CAD render or schematic of the concept</div>
-      <figcaption>The concept: explain what the reader is looking at.</figcaption>
+      <img src="../images/thesis/treadmill_complete_assembly.png" alt="CAD model of the complete testbench">
+      <figcaption>CAD model of the complete testbench.</figcaption>
     </figure>
 
     <!-- ===== 3. BUILDING IT ===== -->
     <h2>Design and build</h2>
-    <p>Explain the most important design choices and the challenges you ran into. Two or three short paragraphs are enough. Which parts did you design yourself? Which requirements were hardest to meet (stiffness, accuracy, safety)?</p>
 
+    <h3>1. Making the road surface</h3>
+    <p>To get a road surface that is as real as possible, I 3D scanned actual road bricks, the type you see on many Dutch roads. I cleaned up and repaired the scans in Meshmixer and then 3D printed the bricks. Mounted on the treadmill belt, they form a one-to-one copy of a real road surface.</p>
     <div class="gallery">
       <figure class="figure">
-        <div class="photo">Photo: manufacturing</div>
-        <figcaption>Short caption.</figcaption>
+        <img src="../images/thesis/CAD_file_brick.png" alt="3D scan of a road brick showing its rough texture">
+        <figcaption>The 3D scan of a single road brick, after repair in Meshmixer.</figcaption>
       </figure>
       <figure class="figure">
-        <div class="photo">Photo: sensors / electronics</div>
-        <figcaption>Short caption.</figcaption>
-      </figure>
-      <figure class="figure">
-        <div class="photo">Photo: assembly</div>
-        <figcaption>Short caption.</figcaption>
+        <img src="../images/thesis/complete_roadsurface.jpeg" alt="Rows of white 3D-printed bricks mounted on the treadmill belt">
+        <figcaption>The printed bricks mounted on the treadmill belt.</figcaption>
       </figure>
     </div>
+
+    <h3>2. Making the stabilization mechanism</h3>
+    <p>A bike on a treadmill needs to be held upright, but holding it too tightly would remove exactly the motion I wanted to measure. The mechanism had to let the bike and rider move naturally, as they would on a real road, while still keeping the bike stable.</p>
+    <div class="dof">
+      <div>
+        <h4>Allowed motion</h4>
+        <ul>
+          <li>Longitudinal (forwards and backwards)</li>
+          <li>Vertical (up and down)</li>
+          <li>Pitch (nose up and down)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Restricted motion</h4>
+        <ul>
+          <li>Lateral (sideways)</li>
+          <li>Roll (tipping over)</li>
+          <li>Yaw (steering away)</li>
+        </ul>
+      </div>
+    </div>
+    <p>My solution is a <strong>double inverted pendulum</strong> on each side of the bike, connected to each other with crossbeams. The pendulums allow the three natural degrees of freedom, while the crossbeams lock the other three.</p>
+    <div class="gallery">
+      <figure class="figure">
+        <img src="../images/thesis/Concept3.png" alt="Side view sketch of a bike with an inverted pendulum connected to the handlebar">
+        <figcaption>The concept: an inverted pendulum (green) connected to the front of the bike.</figcaption>
+      </figure>
+      <figure class="figure">
+        <img src="../images/thesis/bike_pitch_FBD.png" alt="Diagram of the bike pitching over a bump while the pendulum follows">
+        <figcaption>When the front wheel rides over a brick, the bike can pitch freely.</figcaption>
+      </figure>
+    </div>
+    <figure class="figure figure-narrow">
+      <img src="../images/thesis/final_design_top_view.png" alt="CAD model of the stabilization mechanism made of aluminium profiles">
+      <figcaption>The final design: two double inverted pendulums connected by crossbeams.</figcaption>
+    </figure>
+
+    <h3>3. Making the measurement setup</h3>
+    <p>The bike stands still on a moving belt, so the rolling resistance of the road surface tries to pull it backwards. The force needed to hold the bike in place is therefore a direct measure of that resistance. I measure it with two load cells:</p>
+    <ul>
+      <li><strong>The main load cell</strong> holds the bike in place and measures the total resistive force on the bike (F<sub>m</sub>).</li>
+      <li><strong>The second load cell</strong> sits in a custom flexure device between the bike and the stabilization mechanism. It measures the force that the stabilization mechanism puts on the bike (F<sub>i</sub>).</li>
+    </ul>
+    <p>Without the second load cell, the force of the stabilization mechanism would end up in the measurement and look like extra rolling resistance. By measuring it separately, I can filter it out and keep only the resistance caused by the road surface.</p>
+    <figure class="figure">
+      <img src="../images/thesis/FBD_forces_spring.png" alt="Free body diagram of the forces on the bike in the driving direction, with two load cells shown as red squares">
+      <figcaption>The forces on the bike in the driving direction. The red squares are the load cells: F<sub>m</sub> is measured by the main load cell and F<sub>i</sub> is the force of the stabilization mechanism. Together they balance the rolling resistance at the front and rear wheel (F<sub>rr</sub>).</figcaption>
+    </figure>
 
     <!-- ===== 4. TESTING AND RESULTS ===== -->
     <h2>Testing and results</h2>
