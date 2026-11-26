@@ -423,3 +423,60 @@ section h2 {
     gap: 0.25rem;
   }
 }
+
+/* ===== Clickable cards ===== */
+/* Put class="stretched" on a link inside a card to make the whole card clickable. */
+.card { position: relative; cursor: pointer; }
+
+.card a.stretched::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* ===== Photos on detail pages ===== */
+.figure { margin: 1.5rem 0 2rem; }
+
+.figure img,
+.photo {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Grey box shown until you add a real photo */
+.photo {
+  aspect-ratio: 16 / 9;
+  background: var(--soft);
+  border: 2px dashed var(--border);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery .figure { margin: 0; }
+
+.callout {
+  background: #eff6ff;
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.callout p { margin: 0; }
