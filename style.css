@@ -296,6 +296,110 @@ section h2 {
 
 .footer p { margin: 0.3rem 0; }
 
+/* ===== Featured student team ===== */
+.featured {
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(180deg, #eff6ff, var(--bg) 60%);
+}
+
+.featured-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.featured h3 {
+  font-size: 1.6rem;
+  margin: 0.2rem 0;
+}
+
+.label {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.role {
+  margin: 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.team-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.sub-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.sub-project {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.sub-project h4 { margin: 0 0 0.3rem; }
+
+.sub-project p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ===== Project detail page ===== */
+.detail {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+}
+
+.detail h1 { margin: 0.25rem 0 0.5rem; }
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding: 1rem 0;
+  margin: 1rem 0 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.facts div span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.team-project {
+  border-left: 4px solid var(--accent);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.team-project h3 { margin: 0 0 0.25rem; }
+
+.my-part {
+  background: var(--soft);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+
+
 /* ===== Phones and small screens ===== */
 @media (max-width: 640px) {
   .hero {
