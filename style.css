@@ -566,3 +566,7 @@ a.hobby:hover {
 }
 
 .video-sequence video.active { display: block; }
+
+.figure video { display: block; width: 100%; border-radius: 8px; }
+
+.dof p { margin: 0; font-size: 1.25rem; font-weight: 600; }

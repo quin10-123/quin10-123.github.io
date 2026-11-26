@@ -151,13 +151,44 @@
 
     <!-- ===== 4. TESTING AND RESULTS ===== -->
     <h2>Testing and results</h2>
-    <p>How did you validate the testbench? Show what it can measure, for example a comparison between different road surfaces or tyre pressures, and how accurate and repeatable the measurements are.</p>
 
-    <!-- RESULT IMAGE: a graph exported from your thesis works well -->
     <figure class="figure">
-      <div class="photo">Graph: measured power loss per road surface</div>
-      <figcaption>Explain the key takeaway of the graph in one sentence.</figcaption>
+      <video src="../videos/thesis/testing_video.mp4" autoplay muted loop playsinline controls></video>
+      <figcaption>The finished testbench in action: me riding over the custom-made road surface.</figcaption>
     </figure>
+
+    <p>With the design finished, the testbench could finally be put to work. The video above shows it in action: me riding over the custom-made road surface, held upright by the stabilization mechanism while the load cells record the forces.</p>
+
+    <h3>Test plan</h3>
+    <p>Ideally, I would have made a whole set of road surfaces, ranging from smooth to very rough. Due to time constraints that was not possible. Instead, I kept the road surface the same and varied two other parameters:</p>
+    <div class="dof">
+      <div>
+        <h4>Tyre pressure</h4>
+        <p>3.5 – 5.5 bar</p>
+      </div>
+      <div>
+        <h4>Speed</h4>
+        <p>10 – 30 km/h</p>
+      </div>
+    </div>
+    <p>The question behind this test plan: <strong>is there an optimal tyre pressure, depending on speed, at which the vibrational losses are smallest?</strong></p>
+
+    <h3>Results</h3>
+    <p>The heatmap below gives an overview of all measurements: for every combination of speed and tyre pressure, it shows how much power was lost.</p>
+    <figure class="figure">
+      <img src="../images/thesis/heatmap.png" alt="Heatmap of power loss, with speed on the horizontal axis and tyre pressure on the vertical axis">
+      <figcaption>Power loss for each combination of speed (horizontal axis) and tyre pressure (vertical axis).</figcaption>
+    </figure>
+
+    <p>The graph below shows the same measurements per speed setpoint, with a line for each tyre pressure. The shaded blue, purple and grey area marks the power that is lost purely to rolling resistance. <strong>Everything above that area is lost to vibrations</strong> caused by the road surface.</p>
+    <figure class="figure">
+      <img src="../images/thesis/powerloss_graph.png" alt="Graph of power loss against speed for different tyre pressures, with a shaded area for the rolling-resistance losses">
+      <figcaption>Power loss at each speed setpoint for different tyre pressures. The shaded area is the loss due to rolling resistance alone; the rest is vibrational loss.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <p>The highest power loss I measured was <strong>230 W</strong>. That is significant: a professional cyclist puts out roughly 400 W, so on a rough road more than half of that could be lost to the road surface.</p>
+    </div>
 
     <!-- ===== 5. CONCLUSION ===== -->
     <h2>Conclusion</h2>
