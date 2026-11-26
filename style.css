@@ -555,3 +555,43 @@ a.hobby:hover {
   .side-by-side { flex-direction: column; }
   .side-by-side .figure { flex: none !important; width: 100%; }
 }
+
+/* ===== Step-by-step video player ===== */
+.detail h4 { margin: 2rem 0 0.5rem; font-size: 1.1rem; }
+
+.video-steps {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem 0 2rem;
+}
+
+.video-stage { background: #000; }
+
+.video-stage video {
+  display: none;
+  width: 100%;
+}
+
+.video-stage video.active { display: block; }
+
+.video-steps .step { padding: 1rem 1.25rem 0; }
+
+.video-steps .step p { margin: 0; }
+
+/* Once the script runs, show only the current step's text */
+.video-steps.ready .step:not(.active) { display: none; }
+
+.video-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.video-controls .button { cursor: pointer; font: inherit; font-weight: 600; }
+
+.video-controls .button:disabled { opacity: 0.35; cursor: default; }
+
+.step-count { color: var(--muted); font-size: 0.9rem; }
