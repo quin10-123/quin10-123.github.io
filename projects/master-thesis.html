@@ -168,7 +168,7 @@
       </div>
       <div>
         <h4>Speed</h4>
-        <p>10 – 30 km/h</p>
+        <p>5 – 30 km/h</p>
       </div>
     </div>
     <p>The question behind this test plan: <strong>is there an optimal tyre pressure, depending on speed, at which the vibrational losses are smallest?</strong></p>
@@ -176,18 +176,25 @@
     <h3>Results</h3>
     <p>The heatmap below gives an overview of all measurements: for every combination of speed and tyre pressure, it shows how much power was lost.</p>
     <figure class="figure">
-      <img src="../images/thesis/heatmap.png" alt="Heatmap of power loss, with speed on the horizontal axis and tyre pressure on the vertical axis">
+      <img src="../images/thesis/heatmap_pressure_speed.png" alt="Heatmap of power loss, with speed on the horizontal axis and tyre pressure on the vertical axis">
       <figcaption>Power loss for each combination of speed (horizontal axis) and tyre pressure (vertical axis).</figcaption>
     </figure>
 
     <p>The graph below shows the same measurements per speed setpoint, with a line for each tyre pressure. The shaded blue, purple and grey area marks the power that is lost purely to rolling resistance. <strong>Everything above that area is lost to vibrations</strong> caused by the road surface.</p>
     <figure class="figure">
-      <img src="../images/thesis/powerloss_graph.png" alt="Graph of power loss against speed for different tyre pressures, with a shaded area for the rolling-resistance losses">
+      <img src="../images/thesis/powerloss_vs_speed_pressure_with_errorbars_with_RR.png" alt="Graph of power loss against speed for different tyre pressures, with a shaded area for the rolling-resistance losses">
       <figcaption>Power loss at each speed setpoint for different tyre pressures. The shaded area is the loss due to rolling resistance alone; the rest is vibrational loss.</figcaption>
     </figure>
 
+    <p>Three things stand out:</p>
+    <ul>
+      <li><strong>The losses grow quickly with speed.</strong> At 5 km/h about 35 W is lost; at 30 km/h this rises to 213–234 W, depending on the tyre pressure.</li>
+      <li><strong>Most of the loss is vibrational.</strong> At 30 km/h, rolling resistance accounts for roughly 65–80 W. The remaining 130–170 W, about two thirds of the total, is lost to vibrations.</li>
+      <li><strong>Tyre pressure matters more at higher speeds.</strong> At low speed all pressures give nearly the same loss. From 15 km/h upwards, the lowest pressure (3.5 bar) consistently gives the highest loss, and at 30 km/h it loses about 20 W more than 5.5 bar. The lowest losses were measured at 5.0–5.5 bar.</li>
+    </ul>
+
     <div class="callout">
-      <p>The highest power loss I measured was <strong>230 W</strong>. That is significant: a professional cyclist puts out roughly 400 W, so on a rough road more than half of that could be lost to the road surface.</p>
+      <p>The highest power loss I measured was <strong>234 W</strong> (3.5 bar, 30 km/h). That is significant: a professional cyclist puts out roughly 400 W, so on a rough road more than half of that could be lost to the road surface.</p>
     </div>
 
     <!-- ===== 5. CONCLUSION ===== -->
