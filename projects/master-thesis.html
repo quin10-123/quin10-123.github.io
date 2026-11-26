@@ -73,7 +73,11 @@
 
     <h3>1. Making the road surface</h3>
     <p>To get a road surface that is as real as possible, I 3D scanned actual road bricks, the type you see on many Dutch roads. I cleaned up and repaired the scans in Meshmixer and then 3D printed the bricks. Mounted on the treadmill belt, they form a one-to-one copy of a real road surface.</p>
-    <div class="gallery">
+    <div class="gallery gallery-3">
+      <figure class="figure">
+        <img src="../images/thesis/brick_scanning.jpeg" alt="Scanning a road brick on a turntable with a handheld 3D scanner">
+        <figcaption>Scanning a real road brick with a handheld 3D scanner.</figcaption>
+      </figure>
       <figure class="figure">
         <img src="../images/thesis/CAD_file_brick.png" alt="3D scan of a road brick showing its rough texture">
         <figcaption>The 3D scan of a single road brick, after repair in Meshmixer.</figcaption>
@@ -85,7 +89,7 @@
     </div>
 
     <h3>2. Making the stabilization mechanism</h3>
-    <p>A bike on a treadmill needs to be held upright, but holding it too tightly would remove exactly the motion I wanted to measure. The mechanism had to let the bike and rider move naturally, as they would on a real road, while still keeping the bike stable.</p>
+    <p>A bike on a treadmill needs to be held upright, but holding it too tightly would remove exactly the motion I wanted to keep. The mechanism had to let the bike and rider move naturally, as they would on a real road, while still keeping the bike stable.</p>
     <div class="dof">
       <div>
         <h4>Allowed motion</h4>
@@ -99,26 +103,23 @@
         <h4>Restricted motion</h4>
         <ul>
           <li>Lateral (sideways)</li>
-          <li>Roll (tipping over)</li>
-          <li>Yaw (steering away)</li>
+          <li>Roll (leaning in a corner)</li>
+          <li>Yaw (steering)</li>
         </ul>
       </div>
     </div>
-    <p>My solution is a <strong>double inverted pendulum</strong> on each side of the bike, connected to each other with crossbeams. The pendulums allow the three natural degrees of freedom, while the crossbeams lock the other three.</p>
-    <div class="gallery">
-      <figure class="figure">
+    <p>My solution is a <strong>double inverted pendulum</strong> on each side of the bike, connected to each other with crossbeams. The pendulums allow the three natural degrees of freedom, while the inverted pendulums and crossbeams lock the other three.</p>
+    <!-- flex-grow = image width / height, so both images end up the same height -->
+    <div class="side-by-side">
+      <figure class="figure" style="flex: 1.72">
         <img src="../images/thesis/Concept3.png" alt="Side view sketch of a bike with an inverted pendulum connected to the handlebar">
         <figcaption>The concept: an inverted pendulum (green) connected to the front of the bike.</figcaption>
       </figure>
-      <figure class="figure">
-        <img src="../images/thesis/bike_pitch_FBD.png" alt="Diagram of the bike pitching over a bump while the pendulum follows">
-        <figcaption>When the front wheel rides over a brick, the bike can pitch freely.</figcaption>
+      <figure class="figure" style="flex: 0.69">
+        <img src="../images/thesis/final_design_top_view.png" alt="CAD model of the stabilization mechanism made of aluminium profiles">
+        <figcaption>The final design: two double inverted pendulums connected by crossbeams.</figcaption>
       </figure>
     </div>
-    <figure class="figure figure-narrow">
-      <img src="../images/thesis/final_design_top_view.png" alt="CAD model of the stabilization mechanism made of aluminium profiles">
-      <figcaption>The final design: two double inverted pendulums connected by crossbeams.</figcaption>
-    </figure>
 
     <h3>3. Making the measurement setup</h3>
     <p>The bike stands still on a moving belt, so the rolling resistance of the road surface tries to pull it backwards. The force needed to hold the bike in place is therefore a direct measure of that resistance. I measure it with two load cells:</p>

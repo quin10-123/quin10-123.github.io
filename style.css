@@ -531,3 +531,27 @@ a.hobby:hover {
 }
 
 .hobby-section h2 { margin-bottom: 0.5rem; }
+
+/* Three photos in a row, cropped to the same shape */
+.gallery-3 { grid-template-columns: repeat(3, 1fr); }
+
+.gallery-3 img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Two images side by side at equal height (set flex on each figure to its width/height ratio) */
+.side-by-side {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin: 1.5rem 0 2rem;
+}
+
+.side-by-side .figure { margin: 0; min-width: 0; }
+
+@media (max-width: 640px) {
+  .gallery-3 { grid-template-columns: 1fr; }
+  .side-by-side { flex-direction: column; }
+  .side-by-side .figure { flex: none !important; width: 100%; }
+}
