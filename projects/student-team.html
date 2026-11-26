@@ -44,6 +44,19 @@
     <p>Forze Hydrogen Racing is a student team from Delft University of Technology. Every year, a new team of around 50 students develops a hydrogen-electric race car, with help from alumni, partners and sponsors. The car is powered by a fuel cell, which turns hydrogen into electricity, with water as the only emission.</p>
     <p>Building a race car on hydrogen means solving problems that conventional race cars never face: storing hydrogen safely in a car, packaging a complete fuel cell system in a tight chassis, and combining it with a high-voltage electric drivetrain. During my time as Chief Engineer, the team developed the <strong>Forze 9</strong>.</p>
 
+    <h3>Five departments</h3>
+    <p>The team is split into five departments. As Chief Engineer, I was responsible for the four technical departments and for making sure their work came together in one car.</p>
+    <div class="departments">
+      <div><h4>Business &amp; Operations</h4><p>Partners, sponsors, finance and the organisation of the team.</p></div>
+      <div><h4>Chassis</h4><p>The structure, suspension and bodywork of the car.</p></div>
+      <div><h4>Fuel Cell &amp; Powertrain</h4><p>The hydrogen system, the fuel cell and the electric drivetrain.</p></div>
+      <div><h4>Simulation &amp; Control</h4><p>Vehicle simulations and the control strategies of the car.</p></div>
+      <div><h4>Embedded</h4><p>The electronics, wiring and software that run the car.</p></div>
+    </div>
+
+    <h3>A startup in a student team</h3>
+    <p>Working at Forze feels much like working at a startup. Every year, a new team takes over and has twelve months to develop a car. The deadlines are tight, many concepts are completely new, and there is no ready-made solution to look up: if something does not work, the team has to figure it out itself. It is hard work, often with long days, but you learn more in one year than you would in many years elsewhere.</p>
+
     <h2>My roles</h2>
     <ul class="timeline">
       <li>
@@ -75,8 +88,47 @@
     <div class="team-project">
       <h3>Integrating the hydrogen system (BoP)</h3>
       <p class="muted">2023 – 2024 · Forze 9 · Vehicle integration</p>
-      <p>A fuel cell cannot run on its own. It needs a whole system around it, the Balance of Plant (BoP): hydrogen supply, air supply, cooling and all the piping, wiring and electronics in between. All of this has to fit into a race car without making it too heavy, hurting its handling, or compromising safety.</p>
-      <p class="my-part"><strong>My part:</strong> as Chief Engineer I was end responsible for integrating the BoP into the Forze 9. I coordinated between the departments working on the hydrogen system, the chassis and the electronics, so that every component had its place in the car and all the systems worked together.</p>
+      <p>A fuel cell cannot run on its own. It needs a whole system around it, the Balance of Plant (BoP): hydrogen supply, air supply, cooling and all the piping, wiring and electronics in between. Getting this system into the car, and making it work together with everything else, was the biggest project of my year.</p>
+
+      <h4>The starting point</h4>
+      <p>We started the year with a BoP that did not work yet: the previous team had not finished building the setup. So the first step was to complete it and get it running as a <strong>stand-alone system</strong>, outside the car. Once all its functions had been tested, we moved on to small performance tests, stepping the power setpoint up and down. At the same time, we worked on the drivetrain of the car, to make sure the motors were fully functional.</p>
+
+      <h4>The integration plan</h4>
+      <p>With both the BoP and the drivetrain working, the real challenge began: integrating them into one car. The hardest part was that the car and the BoP each had their own in-house designed and built embedded system. Together they had well over 20 actuators, 50 sensors and two different finite state machines (FSMs), and all of it had to become one system.</p>
+      <p>On top of that, several things were new at the same time: our own PCBs were not yet fully stable, the wiring harness was new, and the two FSMs had to become one. If you change all of that at once and something goes wrong, you can never really tell what caused the problem. So I made an integration plan that separated these risks as much as possible, in three phases:</p>
+      <ol class="phases">
+        <li>
+          <h5>Phase 1 · Mechanical integration</h5>
+          <p>We installed the BoP in the car, still with its own embedded system, so the car temporarily had two: one controlling the car and one controlling the BoP. The tubing had changed slightly between the testbench and the car, so we first confirmed that the BoP still worked after installation. This told us that mechanically everything was in order.</p>
+        </li>
+        <li>
+          <h5>Phase 2 · Embedded integration</h5>
+          <p>The hardest phase: merging the two embedded systems into one. Everything had to run from one combined FSM and one new wiring harness, on PCBs that were still not fully stable, and the whole safety net had to work properly for the combined system.</p>
+        </li>
+        <li>
+          <h5>Phase 3 · Powertrain integration</h5>
+          <p>Finally, we connected the high-voltage (HV) bus of the BoP to the HV bus of the car. From then on, the fuel cell supplied power to the accumulator, and from there to the motors.</p>
+        </li>
+      </ol>
+
+      <h4>The result</h4>
+      <p>After phase 3, the car could spin its wheels purely on hydrogen power, without any outside help: a complete stand-alone hydrogen-electric car.</p>
+
+      <div class="callout">
+        <p>Alumni expected the integration to take <strong>5 months</strong>. We did it in <strong>6 weeks</strong>.</p>
+      </div>
+
+      <p>The key was preparation. The plan was thought through in great detail and had backup solutions for many of the things that could go wrong. Because we thought ahead, we spotted most problems and had a solution ready before they could cause any delay.</p>
+
+      <div class="my-part">
+        <p><strong>My part:</strong></p>
+        <ul>
+          <li>Made the integration plan for all three phases, including the backup solutions</li>
+          <li>Designed the architecture of the safety net</li>
+          <li>Designed the FSMs together with the software engineers</li>
+          <li>Came up with the final design of the embedded system after merging the two systems</li>
+        </ul>
+      </div>
       <!-- Optional: <img src="../images/forze/bop.jpg" alt="The hydrogen system integrated in the car"> -->
     </div>
 
