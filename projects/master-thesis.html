@@ -134,32 +134,20 @@
     </figure>
 
     <h4>Measuring only the horizontal force: a double flexure</h4>
-    <p>Measuring the force of the stabilization mechanism turned out to be a challenge of its own. Step through the animation below to see the problem and my solution.</p>
+    <p>While the bike rides over the bricks, the stabilization mechanism pushes on the bicycle both <strong>vertically</strong> and <strong>horizontally</strong>. Only the horizontal force matters, because that is the one that ends up in my rolling-resistance measurement.</p>
+    <p>A normal load cell measures in one direction only. If I place it where both a vertical and a horizontal force act, the vertical force disturbs the readout and the measurement is wrong. A load cell that measures two directions would solve this, but those are extremely expensive.</p>
+    <p>My solution is a <strong>double flexure</strong>: it can only move in one direction, the horizontal one, and blocks all the others. With a simple one-direction load cell placed in the flexure, I measure exactly the horizontal force of the stabilization mechanism, and nothing else.</p>
 
-    <!-- ===== STEP-BY-STEP VIDEO PLAYER =====
-         Each .step is one stage of the story.
-         data-intro = a clip that plays once when you arrive at this step (optional)
-         data-loop  = the clip that keeps looping while you read the text
-         The text inside the .step is shown below the video. -->
-    <div class="video-steps">
-      <div class="video-stage"></div>
-
-      <div class="step" data-loop="../videos/thesis/loop_blocks0000-0180.mp4">
-        <p>While the bike rides over the bricks, the stabilization mechanism pushes on the bicycle both <strong>vertically</strong> and <strong>horizontally</strong>. Only the horizontal force matters, because that is the one that ends up in my rolling-resistance measurement.</p>
-      </div>
-      <div class="step" data-intro="../videos/thesis/transition_blocks0200-0300.mp4" data-loop="../videos/thesis/flexure_10290-0430.mp4">
-        <p>A normal load cell measures in one direction only. If I place it where both a vertical and a horizontal force act, the vertical force disturbs the readout and the measurement is wrong. A load cell that measures two directions would solve this, but those are extremely expensive.</p>
-      </div>
-      <div class="step" data-intro="../videos/thesis/transition_flexure0460-0530.mp4" data-loop="../videos/thesis/flexure_20560-0700.mp4">
-        <p>My solution is a <strong>double flexure</strong>: it can only move in one direction, the horizontal one, and blocks all the others. With a simple one-direction load cell placed in the flexure, I measure exactly the horizontal force of the stabilization mechanism, and nothing else.</p>
-      </div>
-
-      <div class="video-controls">
-        <button type="button" class="button outline" data-prev>← Previous</button>
-        <span class="step-count"></span>
-        <button type="button" class="button" data-next>Next →</button>
-      </div>
-    </div>
+    <!-- VIDEO SEQUENCE: the clips in data-clips play one after another, then start over. -->
+    <figure class="figure">
+      <div class="video-sequence" data-clips="
+        ../videos/thesis/loop_blocks0000-0180.mp4,
+        ../videos/thesis/transition_blocks0200-0300.mp4,
+        ../videos/thesis/flexure_10290-0430.mp4,
+        ../videos/thesis/transition_flexure0460-0530.mp4,
+        ../videos/thesis/flexure_20560-0700.mp4"></div>
+      <figcaption>The double flexure: only the horizontal motion is let through to the load cell.</figcaption>
+    </figure>
 
     <!-- ===== 4. TESTING AND RESULTS ===== -->
     <h2>Testing and results</h2>
@@ -191,6 +179,6 @@
     </div>
   </footer>
 
-  <script src="../video-steps.js"></script>
+  <script src="../video-sequence.js"></script>
 </body>
 </html>
