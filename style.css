@@ -550,7 +550,7 @@ a.hobby:hover {
 
 .side-by-side .figure { margin: 0; min-width: 0; }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .gallery-3 { grid-template-columns: 1fr; }
   .side-by-side { flex-direction: column; }
   .side-by-side .figure { flex: none !important; width: 100%; }
