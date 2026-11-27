@@ -35,7 +35,7 @@
 
     <!-- Optional photo of the car: put it in images/ and uncomment
     <figure class="figure">
-      <img src="../images/forze/forze9.jpg" alt="The Forze 9 hydrogen race car on track">
+      <img src="../images/projects/student-team/forze9.jpg" alt="The Forze 9 hydrogen race car on track">
       <figcaption>The Forze 9 on track.</figcaption>
     </figure>
     -->
@@ -129,7 +129,7 @@
           <li>Came up with the final design of the embedded system after merging the two systems</li>
         </ul>
       </div>
-      <!-- Optional: <img src="../images/forze/bop.jpg" alt="The hydrogen system integrated in the car"> -->
+      <!-- Optional: <img src="../images/projects/student-team/bop.jpg" alt="The hydrogen system integrated in the car"> -->
     </div>
 
     <div class="team-project">
@@ -137,23 +137,104 @@
       <p class="muted">2023 – 2024 · Forze 9 · System safety</p>
       <p>A hydrogen race car combines high-pressure hydrogen with a high-voltage electrical system. The safety architecture defines how the car detects dangerous situations, such as a hydrogen leak or an electrical fault, and how it brings itself into a safe state, so that the drivers, the team and the people around the track are protected.</p>
       <p class="my-part"><strong>My part:</strong> I was end responsible for the safety of the Forze 9. I made sure safety was designed into the car's architecture from the start, instead of added at the end, and that the car met the safety requirements needed to drive on track.</p>
-      <!-- Optional: <img src="../images/forze/safety.jpg" alt="Describe the picture"> -->
+      <!-- Optional: <img src="../images/projects/student-team/safety.jpg" alt="Describe the picture"> -->
     </div>
 
     <div class="team-project">
       <h3>Track testing</h3>
       <p class="muted">2024 · Forze 9 · Testing</p>
       <p>A new car only proves itself on track. Track testing is where the design, the assembly and the software come together for the first time at full speed, and where problems show up that you never see on paper.</p>
-      <p class="my-part"><strong>My part:</strong> I was end responsible for the assembly and testing of the Forze 9: planning the test days, deciding what to test and in which order, and making sure every test was done safely. The results were fed back into the design, so the car improved with every session.</p>
-      <!-- Optional: <img src="../images/forze/testing.jpg" alt="The Forze 9 during a test day"> -->
+
+      <h4>Six weeks to the race</h4>
+      <p>With the integration finished, we had only <strong>six weeks</strong> left before our first race, and the car had never driven on a track. All the basic functions had been tested in-house on our dyno, but that only proved that the car could spin its wheels at different speed and torque setpoints, and that the BoP adjusted its setpoint accordingly. Everything else was still untested:</p>
+      <div class="tags untested">
+        <span>Brakes</span><span>Vehicle dynamics</span><span>Aero</span><span>Cooling</span><span>Vibrations</span><span>High drivetrain loads</span><span>Regenerative braking</span><span>Endurance runs</span>
+      </div>
+      <p>Endurance runs mattered most: how would the BoP react to high setpoints for a longer period of time? To validate all of this in six weeks, I set up a new test campaign that let us test every function of the car safely, without risking major damage to the car.</p>
+
+      <ul class="timeline story">
+        <li>
+          <span class="years">Test 1<br><span class="muted">Breda Airport</span></span>
+          <div>
+            <h5>Electric only</h5>
+            <p>The first test ran on the electric system only. That let us check the structural integrity of the car without the risk of a hydrogen leak, put more load on the drivetrain, see how the car handled unexpected loads, and get the first results on cornering and vehicle dynamics. We tested at Breda Airport at night: after sunset no planes were allowed to land, so the runway was ours.</p>
+          </div>
+        </li>
+        <li>
+          <span class="years">Test 2<br><span class="muted">Zolder, Belgium</span></span>
+          <div>
+            <h5>The first kilometres on hydrogen</h5>
+            <p>Maybe one of the best track tests ever, after a horrible night of fixing. We finished in the workshop at 2:30 AM, and at 4 AM we were all back to drive three hours from Delft to Circuit Zolder, which opened at 7 AM. That day, the car drove its first kilometres on hydrogen on a real race track.</p>
+            <!-- VIDEO: put the file in videos/forze/ and replace the div with
+                 <video src="../videos/forze/zolder.mp4" controls playsinline></video> -->
+            <figure class="figure">
+              <div class="photo">Video: the first kilometres on hydrogen at Zolder</div>
+            </figure>
+          </div>
+        </li>
+        <li>
+          <span class="years">Workshop</span>
+          <div>
+            <h5>Cooling and IMD problems</h5>
+            <p>Next came a long list of fixes and improvements, mostly related to cooling. Our cooling systems overheated after a few laps, and this even caused IMD errors.</p>
+            <div class="callout">
+              <p><strong>What is an IMD?</strong> An insulation monitoring device measures the resistance between the chassis and the + and − poles of the high-voltage bus. If that resistance gets too low, there is a risk of electrocution, so the IMD shuts the system down. Our coolant is slightly conductive, and it becomes more conductive as it heats up. Once the cooling overheated, the coolant started triggering the IMD.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <span class="years">Tests 3–5<br><span class="muted">Breda Airport</span></span>
+          <div>
+            <h5>More power, fewer errors</h5>
+            <p>Three more night tests at Breda Airport, each time increasing the power output and solving errors.</p>
+          </div>
+        </li>
+        <li>
+          <span class="years">One week to go</span>
+          <div>
+            <h5>Three tests in 36 hours</h5>
+            <p>A week before the race we still had not reached our targets: <strong>over 170 km/h</strong> and <strong>10 minutes of continuous driving without errors</strong>. So we made a schedule for three track tests in 36 hours. One crew would start at Breda Airport at 9 PM and test for a few hours. A second crew would then drive all the equipment to Zolder to start testing at 7 AM, and the first crew would do the last test at Breda Airport again at 9 PM.</p>
+            <p>The first test went really well. The car went faster and faster, and even drove for more than 10 minutes. Then, as the car drove past, all four tyres locked up. That did not look good. Over the radio I heard: <em>"Gearbox is broken."</em> We safely shut the car down and tried to push it by hand: it would not move. When we opened the gearbox filters, we found steel and aluminium shavings everywhere. The gearbox was broken, and with it our test campaign to prepare for the race.</p>
+          </div>
+        </li>
+        <li>
+          <span class="years">Two days left</span>
+          <div>
+            <h5>From racing to a demo lap</h5>
+            <p>We did not stop there. Racing was no longer possible, but we could still drive demo laps around TT Circuit Assen, an hour before the actual race. We had two days before the car had to be on display in Assen.</p>
+            <p>During the day we took the gearbox apart, removed all the broken parts and investigated why it had failed. The cause: a <strong>loose lock ring</strong>. Each driven wheel has its own gearbox, and only one of them had failed. So during the night and early morning we reassembled the gearbox that still worked, and made sure its lock ring could never come loose. One last test, on an outdoor cycling track in Rotterdam that was just wide enough for our car, proved that the car could drive with only one wheel powered. Then we packed everything up, drove to Assen, unloaded the car and prepared it on Friday evening and through the night.</p>
+          </div>
+        </li>
+        <li>
+          <span class="years">Race day<br><span class="muted">TT Circuit Assen</span></span>
+          <div>
+            <h5>The day we worked towards all year</h5>
+            <p>The day we could finally show our car. We fixed the last details (a coolant leak on the drivetrain), lined up the car, and it drove its demo laps. It was an amazing experience, especially seeing the car cross the finish line with the previous generation driving next to it.</p>
+            <!-- PHOTO: put the file in images/projects/student-team/ and replace the div with
+                 <img src="../images/projects/student-team/assen-finish.jpg" alt="The Forze 9 crossing the finish line next to the previous Forze car"> -->
+            <figure class="figure">
+              <div class="photo">Photo: crossing the finish line in Assen, next to the previous generation</div>
+            </figure>
+          </div>
+        </li>
+      </ul>
+
+      <div class="my-part">
+        <p><strong>My part:</strong></p>
+        <ul>
+          <li>Set up the test campaign, so that every function of the car could be validated step by step without risking major damage</li>
+          <li>Planned the test days towards the race, including the schedule of three track tests in 36 hours</li>
+          <li>Led the gearbox repair: finding the cause of the failure and getting the car ready for the demo laps in two days</li>
+        </ul>
+      </div>
     </div>
 
     <h2>What I learned</h2>
-    <ul>
-      <li><strong>Systems engineering:</strong> how to keep the big picture of a complex vehicle, where a change in one system affects many others.</li>
-      <li><strong>Leadership:</strong> leading 35 engineers from 10 nationalities towards one shared goal, and making decisions when not everyone agrees.</li>
-      <li><strong>Communication:</strong> explaining technical choices clearly, both inside the team and to partners and sponsors.</li>
-    </ul>
+    <p>You might think that a year as Chief Engineer of a hydrogen race car mostly teaches you technical things: integration and testing, fuel cell systems, vehicle dynamics, drivetrains, suspension models or embedded systems. I learned a lot about all of those.</p>
+    <p>But what I learned most about was <strong>team dynamics</strong>. You can have the best plan ever, but in the end it is all about the people. They are the ones who execute the plan, so they have to be on board, understand it and contribute to it. Only then can you push a group of students to their absolute limits, and achieve the goal of racing the car.</p>
+    <div class="callout">
+      <p>The best plan is worth nothing without the people who carry it out. People are everything.</p>
+    </div>
 
     <p><a href="../index.html#projects">← Back to all projects</a></p>
   </main>
