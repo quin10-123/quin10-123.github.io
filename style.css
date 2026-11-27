@@ -386,9 +386,12 @@ section h2 {
 }
 
 .team-project {
-  border-left: 4px solid var(--accent);
-  padding: 0.25rem 0 0.25rem 1.25rem;
-  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--bg);
+  transition: box-shadow 0.15s;
 }
 
 .team-project h3 { margin: 0 0 0.25rem; }
@@ -640,3 +643,34 @@ a.hobby:hover {
 .my-part p { margin: 0; }
 
 .my-part ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
+/* ===== Expandable project blocks (<details class="team-project">) ===== */
+.team-project summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.team-project summary::-webkit-details-marker { display: none; }
+
+.team-project:not([open]):hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+
+.team-project[open] { border-color: var(--accent); }
+
+.team-project .teaser { margin: 0.5rem 0 0; color: var(--muted); }
+
+.team-project .more {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.team-project .more::after { content: "Read the full story ↓"; }
+
+.team-project[open] .more::after { content: "Close ↑"; }
+
+.team-project[open] summary {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
