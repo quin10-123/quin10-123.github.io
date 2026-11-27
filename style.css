@@ -386,12 +386,12 @@ section h2 {
 }
 
 .team-project {
-  border: 1px solid var(--border);
+  border: 2px solid var(--accent);
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
-  margin-bottom: 1rem;
-  background: var(--bg);
-  transition: box-shadow 0.15s;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(180deg, #eff6ff, var(--bg) 70%);
+  transition: box-shadow 0.15s, transform 0.15s;
 }
 
 .team-project h3 { margin: 0 0 0.25rem; }
@@ -648,26 +648,60 @@ a.hobby:hover {
 .team-project summary {
   list-style: none;
   cursor: pointer;
+  position: relative;
+  padding-right: 3rem; /* room for the arrow */
 }
 
 .team-project summary::-webkit-details-marker { display: none; }
 
-.team-project:not([open]):hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+/* Round arrow in the top-right corner, turns when opened */
+.team-project summary::after {
+  content: "↓";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
 
-.team-project[open] { border-color: var(--accent); }
+.team-project[open] summary::after { transform: rotate(180deg); }
+
+.team-project:not([open]):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
 
 .team-project .teaser { margin: 0.5rem 0 0; color: var(--muted); }
 
+/* "Read the full story" button */
 .team-project .more {
   display: inline-block;
-  margin-top: 0.75rem;
-  color: var(--accent);
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
   font-weight: 600;
 }
 
 .team-project .more::after { content: "Read the full story ↓"; }
 
+.team-project[open] .more { background: transparent; color: var(--accent); border: 2px solid var(--accent); padding: calc(0.5rem - 2px) calc(1rem - 2px); }
+
 .team-project[open] .more::after { content: "Close ↑"; }
+
+.team-project[open] {
+  background: var(--bg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
 
 .team-project[open] summary {
   padding-bottom: 1rem;
