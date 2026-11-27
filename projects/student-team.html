@@ -88,13 +88,13 @@
     <div class="team-project">
       <h3>Integrating the hydrogen system (BoP)</h3>
       <p class="muted">2023 – 2024 · Forze 9 · Vehicle integration</p>
-      <p>A fuel cell cannot run on its own. It needs a whole system around it, the Balance of Plant (BoP): hydrogen supply, air supply, cooling and all the piping, wiring and electronics in between. Getting this system into the car, and making it work together with everything else, was the biggest project of my year.</p>
+      <p>A fuel cell cannot run on its own. It needs a whole system around it, the Balance of Plant (BoP): Anode (hydrogen supply), Cathpode (air supply), cooling and all the tubing, wiring and electronics in between. Getting this system into the car, and making it work together with everything else, was the biggest project of my year.</p>
 
       <h4>The starting point</h4>
       <p>We started the year with a BoP that did not work yet: the previous team had not finished building the setup. So the first step was to complete it and get it running as a <strong>stand-alone system</strong>, outside the car. Once all its functions had been tested, we moved on to small performance tests, stepping the power setpoint up and down. At the same time, we worked on the drivetrain of the car, to make sure the motors were fully functional.</p>
 
       <h4>The integration plan</h4>
-      <p>With both the BoP and the drivetrain working, the real challenge began: integrating them into one car. The hardest part was that the car and the BoP each had their own in-house designed and built embedded system. Together they had well over 20 actuators, 50 sensors and two different finite state machines (FSMs), and all of it had to become one system.</p>
+      <p>With both the BoP and the drivetrain working, the real challenge began: integrating them into one car. The hardest part was that the car and the BoP each had their own in-house designed and built embedded system. Together they had well over 20 actuators, 70 sensors and two different finite state machines (FSMs), and all of it had to become one system.</p>
       <p>On top of that, several things were new at the same time: our own PCBs were not yet fully stable, the wiring harness was new, and the two FSMs had to become one. If you change all of that at once and something goes wrong, you can never really tell what caused the problem. So I made an integration plan that separated these risks as much as possible, in three phases:</p>
       <ol class="phases">
         <li>
